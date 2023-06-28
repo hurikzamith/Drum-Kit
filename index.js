@@ -43,26 +43,42 @@ document.addEventListener("keydown", function (event) {
   switch (event.key) {
     case 'w':
       crash.play();
+      buttonAnimation("w");
       break;
     case 'a':
       kickBass.play();
+      buttonAnimation("a");
       break;
     case 's':
       crash.play();
+      buttonAnimation("s");
       break;
     case 'd':
       kickBass.play();
+      buttonAnimation("d");
       break;
     case 'j':
       crash.play();
+      buttonAnimation("j");
       break;
     case 'k':
       kickBass.play();
+      buttonAnimation("k");
       break;
     case 'l':
       crash.play();
+      buttonAnimation("l");
       break;
 
       default:
   }
 })
+
+function  buttonAnimation(currentKey) {
+  var activeButton = document.querySelector("." + currentKey);
+  activeButton.classList.add("pressed");
+
+  setTimeout(function() {
+    activeButton.classList.remove("pressed");
+  }, 100);
+}
